@@ -2,13 +2,13 @@ import style from './ContactForm.module.css';
 import React, { useState } from 'react';
 // import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
-import { addContact } from '../redux/contacts/contactsActions';
+import { postContact } from '../redux/contacts/contactsOperations';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { useDispatch, useSelector } from 'react-redux';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
-  const items = useSelector(state => state.contacts);
+  const items = useSelector(state => state.contacts.contacts);
 
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -31,7 +31,7 @@ const ContactForm = () => {
     e.preventDefault();
     items.some(contact => name.toLowerCase() === contact.name.toLowerCase())
       ? Notify.failure(`${name} is already in contacts.`)
-      : dispatch(addContact(name, number));
+      : dispatch(postContact({ name, number }));
     setName('');
     setNumber('');
   };
