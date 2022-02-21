@@ -36,15 +36,3 @@ export const removeContact = createAsyncThunk(
     }
   }
 );
-
-// export const removeContact = createAsyncThunk(
-//   'contacts/removeContact',
-//   async (id, { rejectWithValue }) => {
-//     try {
-//       const removeContact = await contactsAPI.removeContact(id);
-//       return removeContact;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );

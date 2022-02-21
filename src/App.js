@@ -4,9 +4,6 @@ import './App.css';
 import Filter from './Filter/Filter.jsx';
 import ContactForm from './contactForm/ContactForm.jsx';
 import ContactList from './ContactList/ContactList';
-import { useEffect } from 'react';
-import { getContacts } from 'utils/contactsAPI';
-import { useDispatch } from 'react-redux';
 
 const App = () => {
   return (

@@ -1,7 +1,6 @@
 // import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import style from './ContactList.module.css';
-// import { deleteContact } from '../redux/contacts/contactsActions';
 import {
   getContacts,
   removeContact,
@@ -18,7 +17,6 @@ const ContactList = () => {
   useEffect(() => {
     dispatch(getContacts());
   }, [dispatch]);
-  // console.log(items);
   return (
     <ul>
       {filteredContacts.map(({ name, number, id }) => (
@@ -39,26 +37,5 @@ const ContactList = () => {
     </ul>
   );
 };
-
-// const getCurrentContacts = (allContacts, filter) => {
-//   const normalizeFilterRequest = filter.toLowerCase();
-
-//   return allContacts.filter(contact =>
-//     contact.name.toLowerCase().includes(normalizeFilterRequest)
-//   );
-// };
-
-// const mapStateToProps = ({ contacts, filter }) => ({
-//   contacts: getCurrentContacts(contacts, filter),
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   onDeleteContact: id => dispatch(deleteContact(id)),
-// });
-
-// ContactList.propTypes = {
-//   contacts: PropTypes.array.isRequired,
-//   onDeleteContact: PropTypes.func.isRequired,
-// };
 
 export default ContactList;

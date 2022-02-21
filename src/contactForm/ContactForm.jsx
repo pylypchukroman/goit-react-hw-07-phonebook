@@ -1,7 +1,5 @@
 import style from './ContactForm.module.css';
 import React, { useState } from 'react';
-// import PropTypes from 'prop-types';
-// import { connect } from 'react-redux';
 import { postContact } from '../redux/contacts/contactsOperations';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { useDispatch, useSelector } from 'react-redux';
@@ -68,18 +66,5 @@ const ContactForm = () => {
     </form>
   );
 };
-
-// const mapStateToProps = state => ({
-//   currentContacts: state.contacts,
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   onSubmit: (name, number) => dispatch(addContact(name, number)),
-// });
-
-// ContactForm.propTypes = {
-//   onSubmit: PropTypes.func.isRequired,
-//   currentContacts: PropTypes.array.isRequired,
-// };
 
 export default ContactForm;
