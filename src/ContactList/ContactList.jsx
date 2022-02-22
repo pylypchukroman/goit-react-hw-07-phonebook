@@ -16,7 +16,7 @@ const ContactList = () => {
   }, [dispatch]);
 
   return (
-    <ul>
+    <ul className={style.List}>
       {filteredContacts.map(({ name, number, id }) => (
         <li key={id} className={style.Item}>
           <p>
