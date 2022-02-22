@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getFilter } from 'redux/contacts/contactsSelectors';
 
 const Filter = () => {
+  const isLoading = useSelector(state => state.contacts.isLoading);
   const dispatch = useDispatch();
   const filter = useSelector(getFilter);
   return (
@@ -14,6 +15,7 @@ const Filter = () => {
         value={filter}
         onChange={e => dispatch(changeFilter(e))}
       />
+      {isLoading && <h1>loading</h1>}
     </>
   );
 };
