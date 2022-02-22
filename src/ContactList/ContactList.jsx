@@ -6,17 +6,16 @@ import {
   removeContact,
 } from '../redux/contacts/contactsOperations';
 import { useEffect } from 'react';
+import { getFilteredContacts } from 'redux/contacts/contactsSelectors';
 
 const ContactList = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts.contacts);
-  const filter = useSelector(state => state.contacts.filter);
-  const filteredContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
-  );
+  const filteredContacts = useSelector(getFilteredContacts);
+
   useEffect(() => {
     dispatch(getContacts());
   }, [dispatch]);
+
   return (
     <ul>
       {filteredContacts.map(({ name, number, id }) => (
